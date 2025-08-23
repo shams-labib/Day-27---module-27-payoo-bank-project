@@ -1,10 +1,22 @@
+// function er maddome code clean and choto korar jonno ekta function banay setai sob gulate use kora jay, niche tar demo version dekhano hlo
+
+function mainField(id){
+  const value = document.getElementById(id);
+  const valueAdd = value.value;
+  const valueParse = parseInt(valueAdd);
+  return valueParse;
+}
+
+
+
+
+
 document.getElementById('add-btn').addEventListener('click', function(e){
     e.preventDefault()
     const addSelect = document.getElementById('add-select').value
     const addAcount = document.getElementById('add-acount').value
-    const addAmountParseInt = parseInt(document.getElementById('add-amount').value)
-    const addPin = document.getElementById('add-pin').value
-    const addPinParseInt = parseInt(addPin);
+    const addAmountParseInt = mainField('add-amount')
+    const addPin = mainField('add-pin')
 
     // console.log(addSelect, addAcount, addAmountParseInt, addPinParseInt);
 
@@ -16,7 +28,7 @@ document.getElementById('add-btn').addEventListener('click', function(e){
       return;
     }
     // pin number varify
-    if(addPinParseInt !== 1234){
+    if(addPin !== 1234){
       alert('Wrong pin')
       return;
     }
