@@ -9,6 +9,18 @@ function mainField(id){
   return valueParse;
 }
 
+function btnHover(id){
+  const formBtn = document.getElementsByClassName('form-btn');
+     console.log(formBtn);
+
+     for(const btn of formBtn){
+        btn.classList.remove("border-[#0874f2]", "bg-[red]");
+        btn.classList.add("border-gray-200");
+     }
+     document.getElementById(id).classList.remove("border-gray-200")
+     document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874f20d]")
+}
+
 
 // function toggle by card section 
 
@@ -159,25 +171,38 @@ document.getElementById("pay-btn").addEventListener('click', function(p){
 document.getElementById('add-money-btn').addEventListener('click', function(){
      handleSection('addmoneyId')
 
+     btnHover('add-money-btn')
+
+
 });
 document.getElementById('cashout-btn').addEventListener('click', function(){
      handleSection('cashoutId')
+
+    btnHover('cashout-btn')
 });
 
 // transfer money section
 document.getElementById('transfer-btn').addEventListener('click', function(){
     handleSection('transfer-section')
+
+    btnHover('transfer-btn');
+
+    
 });
 
 // Get Bounes
 document.getElementById('get-btn').addEventListener('click', function(){
   handleSection('get-section')
+
+  btnHover('get-btn')
 })
 
 // pay section
 
 document.getElementById("paybill-btn").addEventListener('click', function(){
   handleSection('paybill-section');
+
+  btnHover("paybill-btn")
 })
 
 
