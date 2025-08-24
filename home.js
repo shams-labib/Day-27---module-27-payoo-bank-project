@@ -1,5 +1,7 @@
 // function er maddome code clean and choto korar jonno ekta function banay setai sob gulate use kora jay, niche tar demo version dekhano hlo
 
+// function section
+
 function mainField(id){
   const value = document.getElementById(id);
   const valueAdd = value.value;
@@ -18,7 +20,10 @@ function handleSection(id){
   document.getElementById(id).style.display = 'block'
 }
 
+// Form work section
 
+
+// add section work
 document.getElementById('add-btn').addEventListener('click', function(e){
     e.preventDefault()
     const addSelect = document.getElementById('add-select').value
@@ -97,7 +102,7 @@ document.getElementById('transfer').addEventListener('click', function(t){
     return;
   }
   if(transferPinInt !== 1234){
-    alert('Invalid pin')
+    alert('Invalid pin');
   }
 
   // transfer money work
@@ -107,16 +112,31 @@ document.getElementById('transfer').addEventListener('click', function(t){
 
 })
 
+// get bonus section
+document.getElementById("get-bonus").addEventListener('click', function(g){
+  g.preventDefault()
+  const getInput = mainField("get-acount")
+  const available = parseInt(document.getElementById('available-balance').innerText)
+  if(getInput === 2222 ){
+    const totalBonus = available + 5000;
+    document.getElementById('available-balance').innerText = totalBonus;
+  }
+  else (
+    alert('Invalid copon')
+  )
+
+  
+})
+
+
+
+// Next Button section
+
 
 // cashout and add money btn work 
 
 document.getElementById('add-money-btn').addEventListener('click', function(){
-     const forms = document.getElementsByClassName('form');
-     
-     for(const form of forms){
-         form.style.display = 'none';
-     }
-     document.getElementById('addmoneyId').style.display = 'block'
+     handleSection('addmoneyId')
 
 });
 document.getElementById('cashout-btn').addEventListener('click', function(){
@@ -128,5 +148,9 @@ document.getElementById('transfer-btn').addEventListener('click', function(){
     handleSection('transfer-section')
 });
 
+// Get Bounes
+document.getElementById('get-btn').addEventListener('click', function(){
+  handleSection('get-section')
+})
 
 
