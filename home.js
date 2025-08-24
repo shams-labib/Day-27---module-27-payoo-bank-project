@@ -181,3 +181,10 @@ document.getElementById("paybill-btn").addEventListener('click', function(){
 })
 
 
+
+// Log out section
+document.getElementById("log-out").addEventListener('click', function(b){
+  b.preventDefault();
+  window.location.href = './index.html'
+})
+
