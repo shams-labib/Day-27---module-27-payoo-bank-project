@@ -122,7 +122,7 @@ document.getElementById("get-bonus").addEventListener('click', function(g){
     document.getElementById('available-balance').innerText = totalBonus;
   }
   else (
-    alert('Invalid copon')
+    alert('Copon Error')
   )
   
 })
