@@ -77,6 +77,36 @@ document.getElementById('available-balance').innerText = cashoutSection;
 })
 
 
+// transfer section work.
+
+document.getElementById('transfer').addEventListener('click', function(t){
+  t.preventDefault();
+  const transferAcount = document.getElementById('transfer-acount').value
+  const transferAmount = document.getElementById('transfer-amount').value
+  const transferAmountInt = parseInt(transferAmount);
+  const transferPin = document.getElementById('transfer-pin').value
+  const transferPinInt = parseInt(transferPin)
+  const available = parseInt(document.getElementById('available-balance').innerText)
+
+  if(transferAcount.length < 11){
+    alert('Invalid acount number')
+    return;
+  }
+  if(available < transferAmountInt ){
+    alert('Balace short')
+    return;
+  }
+  if(transferPinInt !== 1234){
+    alert('Invalid pin')
+  }
+
+  // transfer money work
+  const transfer = available - transferAmountInt;
+  document.getElementById('available-balance').innerText = transfer;
+  
+
+})
+
 
 // cashout and add money btn work 
 
@@ -96,4 +126,7 @@ document.getElementById('cashout-btn').addEventListener('click', function(){
 // transfer money section
 document.getElementById('transfer-btn').addEventListener('click', function(){
     handleSection('transfer-section')
-})
+});
+
+
+
