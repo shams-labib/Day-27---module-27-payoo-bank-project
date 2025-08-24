@@ -8,7 +8,15 @@ function mainField(id){
 }
 
 
+// function toggle by card section 
 
+function handleSection(id){
+  const forms = document.getElementsByClassName('form');
+  for(const form of forms){
+    form.style.display = 'none'
+  }
+  document.getElementById(id).style.display = 'block'
+}
 
 
 document.getElementById('add-btn').addEventListener('click', function(e){
@@ -73,10 +81,19 @@ document.getElementById('available-balance').innerText = cashoutSection;
 // cashout and add money btn work 
 
 document.getElementById('add-money-btn').addEventListener('click', function(){
-     document.getElementById('cashoutId').style.display = 'none';
-     document.getElementById('addmoneyId').style.display = 'block';
+     const forms = document.getElementsByClassName('form');
+     
+     for(const form of forms){
+         form.style.display = 'none';
+     }
+     document.getElementById('addmoneyId').style.display = 'block'
+
 });
 document.getElementById('cashout-btn').addEventListener('click', function(){
-     document.getElementById('addmoneyId').style.display = 'none';
-      document.getElementById('cashoutId').style.display = 'block';
+     handleSection('cashoutId')
 });
+
+// transfer money section
+document.getElementById('transfer-btn').addEventListener('click', function(){
+    handleSection('transfer-section')
+})
