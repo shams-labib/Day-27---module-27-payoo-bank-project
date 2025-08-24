@@ -124,10 +124,31 @@ document.getElementById("get-bonus").addEventListener('click', function(g){
   else (
     alert('Invalid copon')
   )
-
   
 })
 
+// pay bill section work
+document.getElementById("pay-btn").addEventListener('click', function(p){
+   p.preventDefault()
+   const payAcount = document.getElementById('pay-acount').value;
+   const payAmount = mainField('pay-amount');
+   const available = parseInt(document.getElementById('available-balance').innerText)
+   const payPin = mainField("pay-pin")
+  
+   
+   if(payAcount.length < 11){
+    alert('Invalid Acount number')
+    return;
+   }
+   if(payPin !== 1234){
+    alert('Invalid Pin')
+    return;
+   }
+
+  const total = available - payAmount;
+  document.getElementById('available-balance').innerText = total;
+   
+})
 
 
 // Next Button section
@@ -151,6 +172,12 @@ document.getElementById('transfer-btn').addEventListener('click', function(){
 // Get Bounes
 document.getElementById('get-btn').addEventListener('click', function(){
   handleSection('get-section')
+})
+
+// pay section
+
+document.getElementById("paybill-btn").addEventListener('click', function(){
+  handleSection('paybill-section');
 })
 
 
