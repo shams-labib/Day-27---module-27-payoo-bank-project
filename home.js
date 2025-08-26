@@ -11,7 +11,6 @@ function mainField(id){
 
 function btnHover(id){
   const formBtn = document.getElementsByClassName('form-btn');
-     console.log(formBtn);
 
      for(const btn of formBtn){
         btn.classList.remove("border-[#0874f2]", "bg-[red]");
@@ -19,7 +18,10 @@ function btnHover(id){
      }
      document.getElementById(id).classList.remove("border-gray-200")
      document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#0874f20d]")
-}
+};
+
+// tranjection array
+const tranjectionArrayList = [];
 
 
 // function toggle by card section 
@@ -62,6 +64,13 @@ document.getElementById('add-btn').addEventListener('click', function(e){
 
     const balanceAdd = available + addAmountParseInt;
     document.getElementById('available-balance').innerText = balanceAdd;
+
+    const data = {
+      name: "Add money",
+      date: new Date().toLocaleTimeString()
+     }
+     tranjectionArrayList.push(data)
+     console.log(tranjectionArrayList)
 });
 
 
@@ -88,7 +97,12 @@ document.getElementById('cash').addEventListener('click', function(c){
 const cashoutSection = available - cashAmount;
 document.getElementById('available-balance').innerText = cashoutSection;
 
-
+ const data = {
+      name: "Cash out",
+      date: new Date().toLocaleTimeString()
+     }
+     tranjectionArrayList.push(data)
+     console.log(tranjectionArrayList)
 
 
 })
@@ -169,6 +183,7 @@ document.getElementById("pay-btn").addEventListener('click', function(p){
 // cashout and add money btn work 
 
 document.getElementById('add-money-btn').addEventListener('click', function(){
+  
      handleSection('addmoneyId')
 
      btnHover('add-money-btn')
@@ -179,6 +194,7 @@ document.getElementById('cashout-btn').addEventListener('click', function(){
      handleSection('cashoutId')
 
     btnHover('cashout-btn')
+
 });
 
 // transfer money section
@@ -204,6 +220,18 @@ document.getElementById("paybill-btn").addEventListener('click', function(){
 
   btnHover("paybill-btn")
 })
+
+// Transjection section work
+document.getElementById("tranjectiob-btn").addEventListener('click', function(){
+  handleSection("tranjection-section");
+
+  btnHover("tranjectiob-btn")
+})
+
+
+
+
+
 
 
 
