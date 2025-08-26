@@ -177,7 +177,35 @@ document.getElementById("pay-btn").addEventListener('click', function(p){
 })
 
 
-// Next Button section
+
+
+document.getElementById("tranjectiob-btn").addEventListener('click', function(){
+    const tranjectionContainer = document.getElementById('tranjection-container')
+
+    for(const data of tranjectionArrayList){
+      const div = document.createElement('div')
+      div.innerHTML =`
+      <div class=" rounded-3xl p-3 flex justify-between items-center mt-4">
+        <div class="flex items-center">
+          <div class="border-2 p-3 rounded-3xl">
+            <img src="./assets/wallet1.png" alt=""
+            class="mx-auto">
+          </div>  
+          <div class="ml-3">
+            <h3>Electricity Bill</h3>
+            <p>Today 4.03PM</p>
+          </div>
+        </div>
+        
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+    </div>
+      
+      `
+    }
+})
+
+
+// Next Button section Toggle
 
 
 // cashout and add money btn work 
